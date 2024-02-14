@@ -309,18 +309,6 @@ public class BuildingsImportAction extends JosmAction {
 
         // post-check section
         boolean hasUncommonTags = false;
-        TagMap uncommon = findUncommonTags(resultBuilding);
-        if (!uncommon.isEmpty()){
-            Logging.debug("Found uncommon tags {0}", uncommon);
-            updateGuiStatus(ImportStatus.ACTION_REQUIRED);
-            hasUncommonTags = true;
-            UncommonTagDialog.show(
-                uncommon.getTags()
-                    .toString()
-                    .replace("[", "")
-                    .replace("]", "")
-            );
-        }
 
         updateGuiStatus(ImportStatus.DONE);
         updateGuiTags(resultBuilding, hasUncommonTags);
