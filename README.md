@@ -1,3 +1,11 @@
+
+# ZZBuildings plugin
+
+This plugin is based on PLBuildings. I renamed all occurences to make it co-installable to plbuildings
+and removed the checking of attributes as i enrich the data with more attributes on the server
+than plbuildings.
+
+
 # PLBuildings plugin
 
 ## Description
