@@ -1,6 +1,7 @@
 # all dot files
 .*
 !.gitignore
+!.gitlab-ci.yml
 !.github/
 
 # Intellij

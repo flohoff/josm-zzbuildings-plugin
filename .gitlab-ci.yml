@@ -1,0 +1,7 @@
+
+build:
+  stage: build
+  image: debian/bookworm
+  script:
+    - apt-get update && apt-get -fuy install git default-jdk
+    - ./gradlew
