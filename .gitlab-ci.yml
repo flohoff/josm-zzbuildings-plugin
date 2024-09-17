@@ -4,7 +4,7 @@ build:
   image: amd64/debian:bookworm
   script:
     - apt-get update && apt-get -fuy install git default-jdk gradle
-    - ./gradlew
+    - ./gradlew localDist
   artifacts:
     paths:
       - build/dist
