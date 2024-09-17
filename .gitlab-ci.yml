@@ -16,10 +16,6 @@ buildtested:
   script:
     - apt-get update && apt-get -fuy install git default-jdk gradle
     - ./gradlew compileJava_testedJosm
-  artifacts:
-    paths:
-      - build/dist
-    expire_in: 6 month
 
 buildlatest:
   stage: build
@@ -27,7 +23,3 @@ buildlatest:
   script:
     - apt-get update && apt-get -fuy install git default-jdk gradle
     - ./gradlew compileJava_latestJosm
-  artifacts:
-    paths:
-      - build/dist
-    expire_in: 6 month
