@@ -1,10 +1,32 @@
-
+---
 build:
   stage: build
   image: amd64/debian:bookworm
   script:
     - apt-get update && apt-get -fuy install git default-jdk gradle
     - ./gradlew localDist
+  artifacts:
+    paths:
+      - build/dist
+    expire_in: 6 month
+
+buildtested:
+  stage: build
+  image: amd64/debian:bookworm
+  script:
+    - apt-get update && apt-get -fuy install git default-jdk gradle
+    - ./gradlew compileJava_testedJosm
+  artifacts:
+    paths:
+      - build/dist
+    expire_in: 6 month
+
+buildlatest:
+  stage: build
+  image: amd64/debian:bookworm
+  script:
+    - apt-get update && apt-get -fuy install git default-jdk gradle
+    - ./gradlew compileJava_latestJosm
   artifacts:
     paths:
       - build/dist
