@@ -3,5 +3,9 @@ build:
   stage: build
   image: amd64/debian:bookworm
   script:
-    - apt-get update && apt-get -fuy install git default-jdk
+    - apt-get update && apt-get -fuy install git default-jdk gradle
     - ./gradlew
+  artifacts:
+    paths:
+      - build/dist
+    expire_in: 6 month
